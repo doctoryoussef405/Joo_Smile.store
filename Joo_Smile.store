@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joo Smile - أدوات الأسنان</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;">
+
+<header>
+    <img src="your-photo.jpg" alt="صورتي" class="profile-photo" />
+    <h1>Joo Smile</h1>
+    <nav>
+        <a href="#home">الصفحة الرئيسية</a>
+        <a href="#products">المنتجات</a>
+        <a href="#about">معلومات عنا</a>
+        <a href="#contact">اتصل بنا</a>
+    </nav>
+</header>
+
+<section id="home" class="welcome-section">
+    <h2>مرحبًا بك في متجر أدوات الأسنان</h2>
+    <p>تسوق أدوات الأسنان عالية الجودة بأسعار مناسبة.</p>
+</section>
+
+<section id="products" class="products-section">
+    <h2>منتجاتنا</h2>
+
+    <div class="product" id="product1">
+        <img src="product1.jpg" alt="فرشاة أسنان"/>
+        <h3>فرشاة أسنان</h3>
+        <p class="price">السعر: 50 ج.م</p>
+        <button onclick="editPrice('product1')">تحديث السعر</button>
+        <button onclick="changeImage('product1')">تغيير الصورة</button>
+    </div>
+
+    <div class="product" id="product2">
+        <img src="product2.jpg" alt="معجون أسنان"/>
+        <h3>معجون أسنان</h3>
+        <p class="price">السعر: 30 ج.م</p>
+        <button onclick="editPrice('product2')">تحديث السعر</button>
+        <button onclick="changeImage('product2')">تغيير الصورة</button>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <h2>معلومات عنا</h2>
+    <p>نقدم أفضل أدوات الأسنان لضمان ابتسامة صحية ومشرقة.</p>
+</section>
+
+<section id="contact" class="contact-section">
+    <h2>اتصل بنا</h2>
+    <p>البريد الإلكتروني: info@joosmile.com</p>
+    <p>الهاتف: 0123456789</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Joo Smile. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #008080;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  color: #fff;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  object-fit: cover;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.products-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  background-color: #fff;
+  padding: 20px;
+  margin: 15px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #008080;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006666;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .product {
+    width: 90%;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+function editPrice(productId) {
+  const newPrice = prompt("أدخل السعر الجديد:");
+  if (newPrice) {
+    document.querySelector(`#${productId} .price`).innerText = `السعر: ${newPrice} ج.م`;
+  }
+}
+
+function changeImage(productId) {
+  const newImage = prompt("أدخل رابط الصورة الجديد:");
+  if (newImage) {
+    document.querySelector(`#${productId} img`).src = newImage;
+  }
+}
