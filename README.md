@@ -15,7 +15,7 @@
     }
     header {
       background-color: #00aaff;
-      color: white;
+      color: black;
       padding: 20px 0;
     }
     img {
@@ -24,7 +24,7 @@
     }
     button {
       background-color: #00aaff;
-      color: white;
+      color: black;
       padding: 10px 20px;
       border: none;
       border-radius: 10px;
